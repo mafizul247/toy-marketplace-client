@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaAlignJustify, FaWindowClose } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Navber = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -20,9 +21,11 @@ const Navber = () => {
 
                     {/* Center: Menu Items (Desktop) */}
                     <div className="hidden md:flex justify-center flex-grow">
-                        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <Link to='/' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
                         <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
                         <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Registration</a>
+                        <Link to='/login' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</Link>
                     </div>
 
                     {/* Right side: User Image and Login/Logout */}
@@ -47,9 +50,12 @@ const Navber = () => {
                 </button>
                 {isMenuOpen && (
                     <div className="mt-2">
-                        <a href="#" className="text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                        <Link to='/' className="text-white block px-3 py-2 rounded-md text-base font-medium">Home</Link>
                         <a href="#" className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">About</a>
                         <a href="#" className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                        <a href="#" className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">Registration</a>
+                        <Link to='/login' className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">Login</Link>
+                        
                     </div>
                 )}
             </div>

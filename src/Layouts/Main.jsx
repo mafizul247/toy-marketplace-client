@@ -6,9 +6,11 @@ import Footer from '../components/Shared/Footer';
 const Main = () => {
     return (
         <div>
-            <Navber/>
-            <Outlet/>
-            <Footer/>
+            <Navber />
+            <div className='min-h-[calc(100vh-68px)]'>
+                <Outlet />
+            </div>
+            <Footer />
         </div>
     );
 };
