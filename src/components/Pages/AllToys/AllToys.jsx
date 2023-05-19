@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Rejister = () => {
+const AllToys = () => {
     return (
         <div>
-            <h2>Register</h2>
+            <h2>All Toys</h2>
         </div>
     );
 };
 
-export default Rejister;
+export default AllToys;

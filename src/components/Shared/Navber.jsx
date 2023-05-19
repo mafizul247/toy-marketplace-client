@@ -5,12 +5,21 @@ import { AuthContext } from '../../provider/AuthProvider';
 
 const Navber = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
-    const { user } = useContext(AuthContext);
-    console.log(user);
+    const { user, logOut } = useContext(AuthContext);
 
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
     };
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                console.log('LogOut Successfully')
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
     return (
         <nav className="bg-gray-800">
@@ -27,17 +36,22 @@ const Navber = () => {
                     {/* Center: Menu Items (Desktop) */}
                     <div className="hidden md:flex justify-center flex-grow">
                         <Link to='/' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
+                        <Link to='/allToys' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Toys</Link>
                         <Link to='/register' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</Link>
                         <Link to='/login' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</Link>
                     </div>
 
                     {/* Right side: User Image and Login/Logout */}
                     <div className="ml-4 flex items-center">
-                        <img className="h-8 w-8 rounded-full" src="https://img.freepik.com/free-vector/font-design-word-toy-shop-with-many-toys_1308-42318.jpg" alt="User Image" />
-                        <div className="ml-2 text-white">
-                            {/* Replace the link "#" with your actual login/logout link */}
-                            <a href="#" className="font-semibold">Logout</a>
-                        </div>
+                        {
+                            user ? <>
+                                <img title={user.displayName} className="h-8 w-8 rounded-full" src={user.photoURL} alt="User Image" />
+                                <div onClick={handleLogOut} className="ml-2 text-white">
+                                    {/* Replace the link "#" with your actual login/logout link */}
+                                    <Link  className="font-semibold">LogOut</Link>
+                                </div>
+                            </> : ''
+                        }
                     </div>
                 </div>
             </div>
@@ -54,6 +68,7 @@ const Navber = () => {
                 {isMenuOpen && (
                     <div className="mt-2">
                         <Link to='/' className="text-white block px-3 py-2 rounded-md text-base font-medium">Home</Link>
+                        <Link to='/allToys' className="text-white block px-3 py-2 rounded-md text-base font-medium">All Toys</Link>
                         <Link to='/register' className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">Register</Link>
                         <Link to='/login' className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">Login</Link>
 
