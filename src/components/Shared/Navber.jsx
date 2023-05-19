@@ -37,8 +37,12 @@ const Navber = () => {
                     <div className="hidden md:flex justify-center flex-grow">
                         <Link to='/' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
                         <Link to='/allToys' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Toys</Link>
-                        <Link to='/register' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</Link>
-                        <Link to='/login' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</Link>
+                        {
+                            user ? '' : <>
+                                <Link to='/register' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</Link>
+                                <Link to='/login' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</Link>
+                            </>
+                        }
                     </div>
 
                     {/* Right side: User Image and Login/Logout */}
@@ -48,7 +52,7 @@ const Navber = () => {
                                 <img title={user.displayName} className="h-8 w-8 rounded-full" src={user.photoURL} alt="User Image" />
                                 <div onClick={handleLogOut} className="ml-2 text-white">
                                     {/* Replace the link "#" with your actual login/logout link */}
-                                    <Link  className="font-semibold">LogOut</Link>
+                                    <Link className="font-semibold">LogOut</Link>
                                 </div>
                             </> : ''
                         }

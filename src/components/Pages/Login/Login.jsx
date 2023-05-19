@@ -39,7 +39,7 @@ const Login = () => {
             setError('At least one special character #?!@$%^&*-');
             return
         }
-        console.log(email, password);
+        // console.log(email, password);
 
         loginUser(email, password)
             .then(result => {
