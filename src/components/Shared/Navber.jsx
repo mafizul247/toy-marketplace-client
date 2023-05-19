@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { FaAlignJustify, FaWindowClose } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import logo from './../../../public/toyvers.png'
 
 const Navber = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -28,8 +29,8 @@ const Navber = () => {
                     {/* Left side: Brand Logo and Name */}
                     <Link to='/'>
                         <div className="flex-shrink-0 flex items-center">
-                            <img className="block h-8 w-auto" src="https://img.freepik.com/free-vector/font-design-word-toy-shop-with-many-toys_1308-42318.jpg" alt="Brand Logo" />
-                            <span className="ml-2 text-white font-semibold text-lg">Brand Name</span>
+                            <img className="block h-8 w-auto" src={logo} alt="Brand Logo" />
+                            <span className="ml-2 text-white font-semibold text-lg">ToyVerse</span>
                         </div>
                     </Link>
 
