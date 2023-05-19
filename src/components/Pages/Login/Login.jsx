@@ -52,6 +52,7 @@ const Login = () => {
                 console.log(error.message);
                 setError(error.message);
             })
+            event.target.reset();
 
     }
 

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 
@@ -7,6 +7,12 @@ const Register = () => {
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const { createUser, googleSignIn, user } = useContext(AuthContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+
     const handleRegister = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -47,11 +53,13 @@ const Register = () => {
                 console.log(regUser, name, photo);
                 setSuccess('User Registration Successfully');
                 profileUpdate(result.user, name, photo)
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error)
                 setError(error.message);
             })
+            event.target.reset();
 
     }
 
