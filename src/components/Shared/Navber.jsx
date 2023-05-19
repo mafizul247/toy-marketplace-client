@@ -24,7 +24,7 @@ const Navber = () => {
                         <Link to='/' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
                         <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
                         <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Registration</a>
+                        <Link to='/register' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</Link>
                         <Link to='/login' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</Link>
                     </div>
 
@@ -53,7 +53,7 @@ const Navber = () => {
                         <Link to='/' className="text-white block px-3 py-2 rounded-md text-base font-medium">Home</Link>
                         <a href="#" className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">About</a>
                         <a href="#" className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-                        <a href="#" className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">Registration</a>
+                        <Link to='/register' className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">Register</Link>
                         <Link to='/login' className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">Login</Link>
                         
                     </div>

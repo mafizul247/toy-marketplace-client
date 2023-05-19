@@ -30,7 +30,7 @@ const Login = () => {
                         </div>
                         <div className='text-center'>
                             <button className="btn btn-circle btn-outline">
-                            G
+                                G
                             </button>
                         </div>
                         <label className="label">
