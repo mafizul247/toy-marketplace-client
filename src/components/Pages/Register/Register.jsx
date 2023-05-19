@@ -8,7 +8,7 @@ const Register = () => {
     useTitle('Register')
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
-    const { createUser, googleSignIn, user } = useContext(AuthContext);
+    const { createUser, googleSignIn, user, setReload } = useContext(AuthContext);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -83,7 +83,8 @@ const Register = () => {
         })
             .then(() => {
                 console.log('User Profile Updated');
-                // console.log(user, name, photo);
+                console.log(user, name, photo);
+                setReload(true);
                 // setSuccess('User Profile Updated')
             })
             .catch(error => {
