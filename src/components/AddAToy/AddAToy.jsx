@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
+import Swal from 'sweetalert2';
 
 const AddAToy = () => {
     useTitle('Add A Toy')
@@ -21,7 +22,29 @@ const AddAToy = () => {
         const newToy = {
             name, price, supplier, supplier, subCategory, email, rating, photo, details
         }
-        console.log(newToy)
+        console.log(newToy);
+
+        fetch('http://localhost:5000/toys', {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(newToy)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Add A Toy successfully',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                      })
+                }
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+            event.target.reset();
     }
 
     return (
@@ -73,7 +96,7 @@ const AddAToy = () => {
                         <label className="label">
                             <h5 className='text-xl font-bold text-slate-700'>Rating</h5>
                         </label>
-                        <input type="number" name='rating' placeholder="Rating" className="input input-bordered w-full " />
+                        <input type="text" name='rating' placeholder="Rating" className="input input-bordered w-full " />
                     </div>
                 </div>
                 <div className='md:flex mt-2'>
