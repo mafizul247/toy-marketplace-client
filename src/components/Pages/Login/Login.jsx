@@ -62,7 +62,8 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
-                setSuccess('Google SignIn Successfullty');
+                setSuccess('Google SignIn Successfully');
+                navigate(from, {replace: true});
             })
             .then(error => {
                 console.log(error.message)

@@ -19,7 +19,7 @@ const DetailsToy = () => {
                     <h6><span className='font-bold'>Available Quantity:</span> {toy.quantity}</h6>
                     <h6><span className='font-bold'>Description:</span> {toy.details}</h6>
                     <div className="card-actions justify-center">
-                        <button className="btn btn-block">Buy Now</button>
+                        <button className="btn btn-block ">Buy Now</button>
                     </div>
                 </div>
             </div>

@@ -69,7 +69,8 @@ const Register = () => {
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
-                setSuccess('Google Registration Successfully')
+                setSuccess('Google Registration Successfully');
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error.message);

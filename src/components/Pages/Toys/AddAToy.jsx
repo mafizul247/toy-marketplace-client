@@ -71,7 +71,7 @@ const AddAToy = () => {
                 <div className='md:flex mt-2'>
                     <div className="form-control w-full px-2 ">
                         <label className="label">
-                            <h5 className='text-xl font-bold text-slate-700'>Supplier Name</h5>
+                            <h5 className='text-xl font-bold text-slate-700'>Seller Name</h5>
                         </label>
                         <input type="text" name='supplier' defaultValue={displayName} placeholder="Supplier Name" className="input input-bordered w-full " />
                     </div>
@@ -90,7 +90,7 @@ const AddAToy = () => {
                 <div className='md:flex mt-2'>
                     <div className="form-control w-full px-2 ">
                         <label className="label">
-                            <h5 className='text-xl font-bold text-slate-700'>Supplier Email</h5>
+                            <h5 className='text-xl font-bold text-slate-700'>Seller Email</h5>
                         </label>
                         <input type="email" name='email' defaultValue={email} placeholder="Supplier Email" className="input input-bordered w-full " />
                     </div>

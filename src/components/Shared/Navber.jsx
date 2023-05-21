@@ -40,6 +40,7 @@ const Navber = () => {
                         <Link to='/allToys' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Toys</Link>
                         {
                             user ? <>
+                                <Link to='/myToys' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My Toys</Link>
                                 <Link to='/addAToy' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add A Toy</Link>
                             </> : <>
                                 <Link to='/register' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</Link>
@@ -78,6 +79,7 @@ const Navber = () => {
                         <Link to='/allToys' className="text-white block px-3 py-2 rounded-md text-base font-medium">All Toys</Link>
                         {
                             user ? <>
+                                <Link to='/myToys' className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">My Toys</Link>
                                 <Link to='/addAToy' className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">Add A Toy</Link>
                             </> : <>
                                 <Link to='/register' className="text-gray-300 mt-1 block px-3 py-2 rounded-md text-base font-medium">Register</Link>
