@@ -7,11 +7,11 @@ const AllToys = () => {
     console.log(toys);
 
     return (
-        <div>
-            <h2>All Toys</h2>
+        <div className='my-8 mx-8 p-4 '>
+            <h2 className='text-center text-3xl bg-slate-200 p-4 font-bold'>All Toys</h2>
 
             <div className="overflow-x-auto">
-                <table className="table w-full">
+                <table className="table min-w-full divide-y">
                     {/* table head*/}
                     <thead>
                         <tr>
@@ -35,7 +35,7 @@ const AllToys = () => {
                                 <td>{toy.price ? toy.price : ''}</td>
                                 <td >{toy.quantity ? toy.quantity : ''}</td>
                                 <td>
-                                    <Link to={`/allToys/:${toy._id}`}><button className="btn btn-outline btn-secondary">View Details</button></Link>
+                                    <Link to={`/allToys/${toy._id}`}><button className="btn btn-outline btn-secondary">View Details</button></Link>
                                 </td>
                             </tr>)
                         }
