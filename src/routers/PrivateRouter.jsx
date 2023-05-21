@@ -8,7 +8,9 @@ const PrivateRouter = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <progress className="progress w-56"></progress>
+        return <div className='text-center mt-60'>
+            <button className="btn btn-square loading"></button>
+        </div>
     }
 
     if (user) {
