@@ -27,7 +27,7 @@ const AllToys = () => {
                     {/* table body*/}
                     <tbody>
                         {
-                            toys.map(toy => <tr>
+                            toys.map((toy, index) => <tr key={index}>
                                 <th></th>
                                 <td>{toy.supplier ? toy.supplier : ''}</td>
                                 <td>{toy.name ? toy.name : ''}</td>
