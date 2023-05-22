@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider';
 import useTitle from '../../../hooks/useTitle';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyToys = () => {
     useTitle('My Toys');
@@ -42,11 +43,14 @@ const MyToys = () => {
                                 'Your file has been deleted.',
                                 'success'
                             )
+                            const remaining = myToys.filter(toy => toy._id !== id);
+                            setMyToys(remaining);
                         }
                     })
             }
         })
     }
+
 
     return (
         <div className='my-8 mx-8'>
@@ -81,20 +85,20 @@ const MyToys = () => {
                                 <td>{myToy.name}</td>
                                 <td>{myToy.price}</td>
                                 <th >
-                                    <button className="btn btn-outline me-2">Update</button>
+                                    <Link to={`/updateToy/${myToy._id}`}><label htmlFor="my-modal-5" className="btn btn-outline">Update</label></Link>
                                 </th>
                                 <th>
                                     <button onClick={() => handleDelete(myToy._id)} title='Delete' className="btn btn-circle btn-outline">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                     </button>
                                 </th>
+
                             </tr>)
                         }
                     </tbody>
 
                 </table>
             </div>
-
 
         </div>
     );

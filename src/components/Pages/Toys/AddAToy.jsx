@@ -98,7 +98,7 @@ const AddAToy = () => {
                         <label className="label">
                             <h5 className='text-xl font-bold text-slate-700'>Available Quantity</h5>
                         </label>
-                        <input type="number" name='quantity' defaultValue={email} placeholder="Available Quantity" className="input input-bordered w-full " />
+                        <input type="number" name='quantity' placeholder="Available Quantity" className="input input-bordered w-full " />
                     </div>
                 </div>
                 <div className='md:flex mt-2'>
