@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const UpdateToy = () => {
     useTitle('UpdateToy')
     const myToy = useLoaderData();
-    const { _id, name, price, supplier, subCategory, email, quantity, rating, photo, details } = myToy;
+    const { _id, name, price, quantity, details } = myToy;
 
     console.log(myToy);
 
@@ -47,7 +47,7 @@ const UpdateToy = () => {
 
     return (
         <div className='my-8 mx-8 p-8 rounded-md bg-red-100'>
-            <h2 className='text-center text-4xl font-bold text-slate-700'>Update Toy: {}</h2>
+            <h2 className='text-center text-4xl font-bold text-slate-700'>Update Toy: {name}</h2>
 
             <form onSubmit={handelUpdateToy}>
                 <div className='md:flex mt-2'>
