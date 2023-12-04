@@ -1,6 +1,7 @@
 import React from 'react';
 import useTitle from '../../../hooks/useTitle';
 import Category from './Category';
+import PhotoGallery from './PhotoGallery';
 
 
 const Home = () => {
@@ -8,9 +9,8 @@ const Home = () => {
     return (
         <div>
             <h2>Home </h2>
+            <PhotoGallery/>
             <Category />
-
-            
 
         </div>
     );
